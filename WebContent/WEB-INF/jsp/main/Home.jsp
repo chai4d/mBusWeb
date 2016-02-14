@@ -29,18 +29,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Start m-Bus</a>
+                <a class="navbar-brand topnav" href="Home.action">Start m-Bus</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">About</a>
+                        <a href="Home.action#about">About</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="Home.action#services">Services</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="Home.action#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -52,20 +52,29 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Landing Page</h1>
-                        <h3>A Template by Start Bootstrap</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                            </li>
-                        </ul>
+                        <h1>Route Selection</h1>
+                        <br><br>
+                        <form class="form-horizontal" role="form">
+						    <div class="form-group">
+						      <label class="control-label col-sm-offset-2 col-sm-2">Source :</label>
+						      <div class="col-sm-4">
+						        <input type="text" class="form-control" id="source" placeholder="Enter source">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <label class="control-label col-sm-offset-2 col-sm-2">Destination :</label>
+						      <div class="col-sm-4">
+						        <input type="text" class="form-control" id="destination" placeholder="Enter destination">
+						      </div>
+						    </div>
+	                        <hr class="intro-divider">
+						    <div class="form-group">
+						      <div class="col-sm-offset-4 col-sm-4">
+						        <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+						        <button type="reset" class="btn btn-default">Reset</button>
+						      </div>
+						    </div>
+					    </form>
                     </div>
                 </div>
             </div>
@@ -172,19 +181,19 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="Home.action">Home</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="Home.action#about">About</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="Home.action#services">Services</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="Home.action#contact">Contact</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; "m-Bus" 2016. All Rights Reserved</p>
