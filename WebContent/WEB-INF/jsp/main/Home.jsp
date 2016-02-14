@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+                <a class="navbar-brand topnav" href="#">Start m-Bus</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,6 @@
         </div>
     </nav>
 
-    <a id="about"></a>
     <div class="intro-header">
         <div class="container">
             <div class="row">
@@ -73,32 +72,49 @@
         </div>
     </div>
 
-	<a id="services"></a>
+    <a id="about"></a>
     <div class="content-section-a">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <h2 class="section-heading">Free Mobile App on iOS, Android &amp; Windows Phone</h2>
+                    <p class="lead">
+                    	Project Objective:<br>
+                    	&sdot; No need benefit income for this Mobile App<br>
+                    	&sdot; This App should help mass passenger (Thai or Foreigner) who would like to GO but don't know which way they can choose?<br>
+                    	&sdot; The App will show list of Bus Path with Total Bus Price, Number of Interchange the Bus, Which Bus No. do you need to wait, Where are you in the map, etc.<br>
+                    	&sdot; NO any Advertising, No any Donation, this is pure Free Mobile App
+                    </p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 vcenter">
+                	<img class="img-responsive" src="../img/ex_map_admin.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
 
+	<a id="services"></a>
     <div class="content-section-b">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">What's m-Bus mean?</h2>
+                    <p class="lead">
+                    	&sdot; <a target="_blank" href="http://www.bmta.co.th/?q=en/home">Normal Bus</a>, <a target="_blank" href="http://www.bts.co.th/customer/en/main.aspx">BTS</a>, <a target="_blank" href="http://www.bangkokmetro.co.th/index.aspx?Lang=En">MRT</a>, <a target="_blank" href="http://www.thanakom.co.th/thanakom/brt.html">BRT</a> and <a target="_blank" href="http://www.srtet.co.th/index.php/en/">Airport Link</a><br>
+                    	&sdot; Transport Area is Bangkok Metropolitan Region<br>
+                    	&sdot; The suggestion is depend on your location, and recommending best ways for you
+                    </p>
                 </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                <div class="col-lg-5 col-sm-pull-6 col-sm-6 vcenter">
+                	<img class="img-rounded" src="../img/logo_bmta.jpg" alt="">
+                	<img class="img-rounded" src="../img/logo_bts.jpg" alt="">
+                	<img class="img-rounded" src="../img/logo_mrt.jpg" alt="">
+                	<img class="img-rounded" src="../img/logo_brt.jpg" alt="">
+                	<img class="img-rounded" src="../img/logo_airport_link.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -110,10 +126,17 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">Available to download (soon) on:</h2>
+                    <p class="lead">
+                    	&sdot; <a target="_blank" href="http://www.apple.com/itunes/charts/free-apps/">Apple App Store</a><br>
+                    	&sdot; <a target="_blank" href="https://play.google.com/store/apps/top">Android Apps on Google Play</a><br>
+                    	&sdot; <a target="_blank" href="https://www.microsoft.com/en-us/store/top-free/apps/mobile">Windows Phone Apps</a>
+                    </p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 vcenter">
+                	<img class="img-rounded" src="../img/dl_app_store.jpg" alt="">&nbsp;
+                	<img class="img-rounded" src="../img/dl_google_play.jpg" alt="">&nbsp;
+                	<img class="img-rounded" src="../img/dl_windows_phone.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -124,18 +147,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                    <h2>Contact Us:</h2>
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a target="_blank" href="mailto:chai_4d@hotmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email Me</span></a>
                         </li>
                         <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            <a target="_blank" href="https://www.facebook.com/wiroj.pluemwongroj" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a target="_blank" href="http://chai4d.blogspot.com/" class="btn btn-default btn-lg"><i class="fa fa-rss fa-fw"></i> <span class="network-name">Blogger</span></a>
                         </li>
                     </ul>
                 </div>
