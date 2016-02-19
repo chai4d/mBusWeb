@@ -58,13 +58,13 @@
 						    <div class="form-group">
 						      <label class="control-label col-sm-offset-2 col-sm-2">Source :</label>
 						      <div class="col-sm-4">
-						        <input type="text" class="form-control" id="source" placeholder="Enter source">
+						        <input type="text" class="form-control" id="source" placeholder="Enter source" autocomplete="off" spellcheck="false">
 						      </div>
 						    </div>
 						    <div class="form-group">
 						      <label class="control-label col-sm-offset-2 col-sm-2">Destination :</label>
 						      <div class="col-sm-4">
-						        <input type="text" class="form-control" id="destination" placeholder="Enter destination">
+						        <input type="text" class="form-control" id="destination" placeholder="Enter destination" autocomplete="off" spellcheck="false">
 						      </div>
 						    </div>
 	                        <hr class="intro-divider">
@@ -204,6 +204,39 @@
 
     <script src="../js/jquery-2.2.0.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-typeahead.min.js"></script>
+    <script src="../js/jquery.mockjax.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            function displayResult(item) {
+                $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');
+            }
+            $('#source').typeahead({
+                source: [
+                    {id: 1, name: 'Toronto'},
+                    {id: 2, name: 'Montreal'},
+                    {id: 3, name: 'New York'},
+                    {id: 4, name: 'Buffalo'},
+                    {id: 5, name: 'Boston'},
+                    {id: 6, name: 'Columbus'},
+                    {id: 7, name: 'Dallas'},
+                    {id: 8, name: 'Vancouver'},
+                    {id: 9, name: 'Seattle'},
+                    {id: 10, name: 'Los Angeles'}
+                ],
+                onSelect: displayResult
+            });
+            $('#destination').typeahead({
+                source: [
+                    {id: 1, name: 'A'},
+                    {id: 2, name: 'BB'},
+                    {id: 3, name: 'CCC'}
+                ],
+                onSelect: displayResult
+            });
+        });
+    </script>
 
 </body>
 </html>
