@@ -3,6 +3,7 @@
 	<name>mBusWeb</name>
 	<comment></comment>
 	<projects>
+		<project>mBusMap</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

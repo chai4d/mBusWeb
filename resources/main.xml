@@ -6,8 +6,12 @@
 <struts>
     <package name="main" namespace="/main" extends="default">
 
-        <action name="Home" class="main.Home">
+        <action name="Home" class="chai_4d.mbus.web.action.HomeAction">
             <result>/WEB-INF/jsp/main/Home.jsp</result>
+        </action>
+
+        <action name="BusPath" class="chai_4d.mbus.web.action.BusPathAction">
+            <result>/WEB-INF/jsp/main/BusPath.jsp</result>
         </action>
 
     </package>

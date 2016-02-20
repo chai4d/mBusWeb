@@ -1,4 +1,4 @@
-package main;
+package chai_4d.mbus.web.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 

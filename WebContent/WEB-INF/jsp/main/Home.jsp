@@ -54,17 +54,19 @@
                     <div class="intro-message">
                         <h1>Route Selection</h1>
                         <br><br>
-                        <form class="form-horizontal" role="form">
+                        <s:form action="BusPath.action" target="_blank" class="form-horizontal" role="form">
 						    <div class="form-group">
 						      <label class="control-label col-sm-offset-2 col-sm-2">Source :</label>
 						      <div class="col-sm-4">
-						        <input type="text" class="form-control" id="source" placeholder="Enter source" autocomplete="off" spellcheck="false">
+						        <input type="text" class="form-control" name="source" id="source" placeholder="Enter source" autocomplete="off" spellcheck="false">
+						        <input type="hidden" name="sourceId" id="sourceId">
 						      </div>
 						    </div>
 						    <div class="form-group">
 						      <label class="control-label col-sm-offset-2 col-sm-2">Destination :</label>
 						      <div class="col-sm-4">
-						        <input type="text" class="form-control" id="destination" placeholder="Enter destination" autocomplete="off" spellcheck="false">
+						        <input type="text" class="form-control" name="destination" id="destination" placeholder="Enter destination" autocomplete="off" spellcheck="false">
+						        <input type="hidden" name="destinationId" id="destinationId">
 						      </div>
 						    </div>
 	                        <hr class="intro-divider">
@@ -74,7 +76,7 @@
 						        <button type="reset" class="btn btn-default">Reset</button>
 						      </div>
 						    </div>
-					    </form>
+					    </s:form>
                     </div>
                 </div>
             </div>
@@ -206,37 +208,26 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootstrap-typeahead.min.js"></script>
     <script src="../js/jquery.mockjax.js"></script>
-
     <script type="text/javascript">
         $(function() {
-            function displayResult(item) {
-                $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');
-            }
-            $('#source').typeahead({
-                source: [
-                    {id: 1, name: 'Toronto'},
-                    {id: 2, name: 'Montreal'},
-                    {id: 3, name: 'New York'},
-                    {id: 4, name: 'Buffalo'},
-                    {id: 5, name: 'Boston'},
-                    {id: 6, name: 'Columbus'},
-                    {id: 7, name: 'Dallas'},
-                    {id: 8, name: 'Vancouver'},
-                    {id: 9, name: 'Seattle'},
-                    {id: 10, name: 'Los Angeles'}
-                ],
-                onSelect: displayResult
+        	var sourceData = [
+					<s:iterator value="pointNames">
+	                    {id: <s:property value="pId"/>, name: '<s:property value="nameEn"/>'},
+					</s:iterator>
+                ];
+			$('#source').typeahead({
+                source: sourceData,
+                onSelect: function (item) {
+                	document.getElementById('sourceId').value = item.value;
+                }
             });
             $('#destination').typeahead({
-                source: [
-                    {id: 1, name: 'A'},
-                    {id: 2, name: 'BB'},
-                    {id: 3, name: 'CCC'}
-                ],
-                onSelect: displayResult
+                source: sourceData,
+                onSelect: function (item) {
+                	document.getElementById('destinationId').value = item.value;
+	            }
             });
         });
     </script>
-
 </body>
 </html>
