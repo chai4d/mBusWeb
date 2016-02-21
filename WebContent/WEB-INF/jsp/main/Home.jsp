@@ -54,7 +54,7 @@
                     <div class="intro-message">
                         <h1>Route Selection</h1>
                         <br><br>
-                        <s:form action="BusPath.action" target="_blank" class="form-horizontal" role="form">
+                        <s:form action="BusPath.action" class="form-horizontal" role="form">
 						    <div class="form-group">
 						      <label class="control-label col-sm-offset-2 col-sm-2">Source :</label>
 						      <div class="col-sm-4">
@@ -72,6 +72,7 @@
 	                        <hr class="intro-divider">
 						    <div class="form-group">
 						      <div class="col-sm-offset-4 col-sm-4">
+							    <input type="hidden" name="choiceNo" id="choiceNo" value="1">
 						        <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
 						        <button type="reset" class="btn btn-default">Reset</button>
 						      </div>
@@ -212,7 +213,7 @@
         $(function() {
         	var sourceData = [
 					<s:iterator value="pointNames">
-	                    {id: <s:property value="pId"/>, name: '<s:property value="nameEn"/>'},
+						{id: <s:property value="pId"/>, name: '<s:property value="nameEn"/>'},
 					</s:iterator>
                 ];
 			$('#source').typeahead({

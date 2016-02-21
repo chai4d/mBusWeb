@@ -19,6 +19,10 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+	<session-config>
+		<session-timeout>600</session-timeout> <!-- 600seconds = 10 mins -->
+	</session-config>
+
     <!-- Restricts access to pure JSP files - access available only via Struts action -->
     <security-constraint>
         <display-name>No direct JSP access</display-name>
