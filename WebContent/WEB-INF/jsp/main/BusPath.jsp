@@ -44,6 +44,7 @@
                 <div class="row">
                     <div class="col-lg-12">
 	                    <h1 class="page-header"><s:if test="%{busChoices.size==0}">Result not Found</s:if><s:else>Suggestion Result</s:else></h1>
+						<s:if test="%{busChoices.size>0}">
 						<s:iterator value="%{busChoices[choiceNo-1].busPaths}" status="rowStatus" var="path">
 							<div class="col-sm-4">
 								<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
@@ -58,6 +59,7 @@
 								Distance = <s:property value="#path.distance"/>
 							</div>
 						</s:iterator>
+						</s:if>
                     </div>
                 </div>
             </div>
