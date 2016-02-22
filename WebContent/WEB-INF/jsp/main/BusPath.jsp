@@ -19,7 +19,7 @@
 
 	                        <li<s:if test="%{#rowNo==choiceNo}"> class="active"</s:if>>
 	                            <a href="#">
-	                            	<s:property value="#rowNo"/>.&nbsp;&nbsp;
+	                            	<s:property value="#rowNo"/>.&nbsp;
 	                            	<button type="button" class="btn btn-primary btn-sm">Interchange <span class="badge"><small><s:property value="#choice.noOfInterchange"/></small></span></button>
 	                            	<button type="button" class="btn btn-success btn-sm">Price <span class="badge"><small><s:property value="#choice.totalPrice"/></small></span></button>
 	                            	<span class="small text-muted">&nbsp;&nbsp;D&nbsp;<s:property value="#choice.totalDistance"/></span>
