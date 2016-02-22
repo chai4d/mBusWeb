@@ -4,20 +4,22 @@
 
 <Configuration>
 	<Properties>
-		<Property name="log-path">logs</Property>
+		<Property name="log-path">${sys:user.home}/logs</Property>
+		<Property name="archive-path">${log-path}/archive</Property>
+		<Property name="pattern">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Property>
 	</Properties>
     <Appenders>
-		<RollingFile name="file-log" fileName="${log-path}/mBusWeb.log" filePattern="${log-path}/mBusWeb-%d{yyyy-MM-dd}.log">
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+		<RollingFile name="file-log" fileName="${log-path}/mBusWeb.log" filePattern="${archive-path}/mBusWeb-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
-				<Pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Pattern>
+				<Pattern>${pattern}</Pattern>
 			</PatternLayout>
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
 			</Policies>
 		</RollingFile>
-        <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
-        </Console>
     </Appenders>
     <Loggers>
         <Logger name="chai_4d.mbus.web" level="debug" additivity="false">
