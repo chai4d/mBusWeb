@@ -44,25 +44,23 @@
                 <div class="row">
                     <div class="col-lg-12">
 	                    <h1 class="page-header"><s:if test="%{busChoices.size==0}">Result not Found</s:if><s:else>Suggestion Result</s:else></h1>
-                    </div>
-                </div>
-                <div class="row">
-					<s:if test="%{busChoices.size>0}">
-					<s:iterator value="%{busChoices[choiceNo-1].busPaths}" status="rowStatus" var="path">
-						<div class="col-sm-4">
-							<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
-						</div>
-						<div class="col-sm-4">
-							<i class="fa fa-map-marker fa-fw"></i><s:property value="#path.p1Id"/>&nbsp;&nbsp;
-							<i class="fa fa-long-arrow-right fa-fw"></i>&nbsp;
-							<i class="fa fa-map-marker fa-fw"></i><s:property value="#path.p2Id"/>
-						</div>
-						<div class="col-sm-4">
-							<i class="fa fa-expand fa-fw"></i>&nbsp;&nbsp;
-							Distance = <s:property value="#path.distance"/>
-						</div>
-					</s:iterator>
-					</s:if>
+						<s:if test="%{busChoices.size>0}">
+						<s:iterator value="%{busChoices[choiceNo-1].busPaths}" status="rowStatus" var="path">
+							<div class="col-sm-4">
+								<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
+							</div>
+							<div class="col-sm-4">
+								<i class="fa fa-map-marker fa-fw"></i><s:property value="#path.p1Id"/>&nbsp;&nbsp;
+								<i class="fa fa-long-arrow-right fa-fw"></i>&nbsp;
+								<i class="fa fa-map-marker fa-fw"></i><s:property value="#path.p2Id"/>
+							</div>
+							<div class="row">
+								<i class="fa fa-expand fa-fw"></i>&nbsp;&nbsp;
+								Distance = <s:property value="#path.distance"/>
+							</div>
+						</s:iterator>
+						</s:if>
+					</div>
                 </div>
             </div>
         </div>
