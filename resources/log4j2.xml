@@ -3,15 +3,29 @@
   "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
 
 <Configuration>
+	<Properties>
+		<Property name="log-path">logs</Property>
+	</Properties>
     <Appenders>
-        <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+		<RollingFile name="file-log" fileName="${log-path}/mBusWeb.log" filePattern="${log-path}/mBusWeb-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<Pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+		</RollingFile>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="chai_4d.mbus.web" level="debug"/>
+        <Logger name="chai_4d.mbus.web" level="debug" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file-log"/>
+        </Logger>
         <Root level="warn">
-            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="console"/>
         </Root>
     </Loggers>
 </Configuration>
