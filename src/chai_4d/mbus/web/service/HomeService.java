@@ -15,6 +15,7 @@ public class HomeService
     public static List<PointName> getPointNames(String lang)
     {
         log.debug("Load Point Name (" + lang + ")");
+
         return MapDbBean.loadPointName(lang);
     }
 }
