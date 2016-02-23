@@ -1,23 +1,19 @@
 package chai_4d.mbus.web.action;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.struts2.interceptor.SessionAware;
 
 import chai_4d.mbus.map.model.BusChoice;
 import chai_4d.mbus.web.service.BusPathService;
 
-public class BusPathAction extends BaseAction implements SessionAware
+public class BusPathAction extends BaseAction
 {
     private static final long serialVersionUID = -7156189988833412324L;
     private static final Logger log = LogManager.getLogger(BusPathAction.class);
 
     public static final String sessionKey = "busPath.busChoices";
-
-    private Map<String, Object> session;
 
     private String source;
     private String sourceId;
@@ -26,24 +22,19 @@ public class BusPathAction extends BaseAction implements SessionAware
     private String choiceNo;
     private List<BusChoice> busChoices;
 
-    public void setSession(Map<String, Object> session)
-    {
-        this.session = session;
-    }
-
     @SuppressWarnings("unchecked")
-    public String execute() throws Exception
+    public String doExecute() throws Exception
     {
         log.debug("In execute method");
 
-        if (session.containsKey(sessionKey))
+        if (sessionMap.containsKey(sessionKey))
         {
-            busChoices = (List<BusChoice>) session.get(sessionKey);
+            busChoices = (List<BusChoice>) sessionMap.get(sessionKey);
         }
         else
         {
             busChoices = BusPathService.calcBusChoices(sourceId, destinationId);
-            session.put(sessionKey, busChoices);
+            sessionMap.put(sessionKey, busChoices);
         }
 
         return SUCCESS;
