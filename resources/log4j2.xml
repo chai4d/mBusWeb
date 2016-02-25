@@ -17,7 +17,7 @@
 			</PatternLayout>
         </Console>
 		<RollingFile name="file-log" fileName="${log-path}/mBusWeb.log"
-					 filePattern="${archive-path}/mBusWeb-%d{yyyy-MM-dd}.log">
+					 filePattern="${archive-path}/mBusWeb-%d{yyyy-MM-dd}{GMT+7}.log">
 			<PatternLayout>
 				<Pattern>${pattern}</Pattern>
 			</PatternLayout>
