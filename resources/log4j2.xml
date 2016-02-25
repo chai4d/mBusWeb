@@ -8,7 +8,7 @@
 		<Property name="unix-path">/var/www/vhosts/m-bus.in.th/httpdocs</Property>
 		<Property name="log-path">${win-path}/logs</Property>
 		<Property name="archive-path">${log-path}/archive</Property>
-		<Property name="pattern">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t][%.5X{sessionId}][%X{clientIpAddress}] %c{1} - %msg%n</Property>
+		<Property name="pattern">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+7} [%t][%.5X{sessionId}][%X{clientIpAddress}] %c{1} - %msg%n</Property>
 	</Properties>
     <Appenders>
         <Console name="console" target="SYSTEM_OUT">
