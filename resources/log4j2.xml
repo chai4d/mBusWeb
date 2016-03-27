@@ -37,7 +37,7 @@
             <AppenderRef ref="console"/>
             <AppenderRef ref="file-log"/>
         </Logger>
-        <Logger name="chai_4d.mbus.web" level="error" additivity="false">
+        <Logger name="chai_4d.mbus.web" level="debug" additivity="false">
             <AppenderRef ref="console"/>
             <AppenderRef ref="file-log"/>
         </Logger>
