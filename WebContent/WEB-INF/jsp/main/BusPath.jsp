@@ -45,19 +45,39 @@
                     <div class="col-lg-12">
 	                    <h1 class="page-header"><s:if test="%{busChoices.size==0}">Result not Found</s:if><s:else>Suggestion Result</s:else></h1>
 						<s:if test="%{busChoices.size>0}">
+						<s:set name="start" value=""/>
+						<s:set name="end" value=""/>
+						<s:set name="dist" value="0"/>
 						<s:iterator value="%{busChoices[choiceNo-1].busPaths}" status="rowStatus" var="path">
-							<div class="col-sm-4">
-								<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
-							</div>
-							<div class="col-sm-4">
-								<i class="fa fa-map-marker fa-fw"></i><s:property value="#path.p1Id"/>&nbsp;&nbsp;
-								<i class="fa fa-long-arrow-right fa-fw"></i>&nbsp;
-								<i class="fa fa-map-marker fa-fw"></i><s:property value="#path.p2Id"/>
-							</div>
-							<div class="row">
-								<i class="fa fa-expand fa-fw"></i>&nbsp;&nbsp;
-								Distance = <s:property value="#path.distance"/>
-							</div>
+							<s:if test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#path.p1NameEn) && !@chai_4d.mbus.map.util.StringUtil@isEmpty(#path.p2NameEn)}">
+								<s:set name="start" value="#path.p1NameEn"/>
+								<s:set name="end" value="#path.p2NameEn"/>
+								<s:set name="dist" value="%{#path.distance}"/>
+							</s:if>
+							<s:elseif test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#path.p1NameEn)}">
+								<s:set name="start" value="#path.p1NameEn"/>
+								<s:set name="dist" value="%{#dist+#path.distance}"/>
+							</s:elseif>
+							<s:elseif test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#path.p2NameEn)}">
+								<s:set name="end" value="#path.p2NameEn"/>
+								<s:set name="dist" value="%{#dist+#path.distance}"/>
+							</s:elseif>
+							<s:if test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#start) && !@chai_4d.mbus.map.util.StringUtil@isEmpty(#end)}">
+								<div class="col-sm-3">
+									<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
+								</div>
+								<div class="col-sm-8">
+									<i class="fa fa-map-marker fa-fw"></i><s:property value="#start"/>&nbsp;&nbsp;
+									<i class="fa fa-long-arrow-right fa-fw"></i>&nbsp;
+									<i class="fa fa-map-marker fa-fw"></i><s:property value="#end"/>
+								</div>
+								<div class="row">
+									<i class="fa fa-expand fa-fw"></i>&nbsp;&nbsp;<s:property value="#dist"/>
+								</div>
+								<s:set name="start" value=""/>
+								<s:set name="end" value=""/>
+								<s:set name="dist" value="0"/>
+							</s:if>
 						</s:iterator>
 						</s:if>
 					</div>
