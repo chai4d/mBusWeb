@@ -62,6 +62,9 @@
 								<s:set name="end" value="#path.p2NameEn"/>
 								<s:set name="dist" value="%{#dist+#path.distance}"/>
 							</s:elseif>
+							<s:else>
+								<s:set name="dist" value="%{#dist+#path.distance}"/>
+							</s:else>
 							<s:if test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#start) && !@chai_4d.mbus.map.util.StringUtil@isEmpty(#end)}">
 								<div class="col-sm-3">
 									<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
