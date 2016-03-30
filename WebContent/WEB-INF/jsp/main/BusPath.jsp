@@ -22,7 +22,7 @@
 	                            	<s:property value="#rowNo"/>.&nbsp;
 	                            	<button type="button" class="btn btn-primary btn-sm">Interchange <span class="badge"><small><s:property value="#choice.noOfInterchange"/></small></span></button>
 	                            	<button type="button" class="btn btn-success btn-sm">Price <span class="badge"><small><s:property value="#choice.totalPrice"/></small></span></button>
-	                            	<span class="small text-muted">&nbsp;&nbsp;D&nbsp;<s:property value="#choice.totalDistance"/></span>
+	                            	<span class="small text-muted">&nbsp;&nbsp;<s:property value="@chai_4d.mbus.map.util.StringUtil@toDistance(#choice.totalDistance)"/></span>
 	                            	<span class="fa arrow"></span>
 	                            </a>
 	                            <ul class="nav nav-second-level">
@@ -75,7 +75,7 @@
 									<i class="fa fa-map-marker fa-fw"></i><s:property value="#end"/>
 								</div>
 								<div class="row">
-									<i class="fa fa-expand fa-fw"></i>&nbsp;&nbsp;<s:property value="#dist"/>
+									<i class="fa fa-expand fa-fw"></i>&nbsp;&nbsp;<s:property value="@chai_4d.mbus.map.util.StringUtil@toDistance(#dist)"/>
 								</div>
 								<s:set name="start" value=""/>
 								<s:set name="end" value=""/>
