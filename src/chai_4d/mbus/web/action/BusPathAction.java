@@ -21,6 +21,7 @@ public class BusPathAction extends BaseAction
     private String destinationId;
     private String choiceNo;
     private List<BusChoice> busChoices;
+    private String busNo;
 
     @SuppressWarnings("unchecked")
     public String doExecute() throws Exception
@@ -98,5 +99,15 @@ public class BusPathAction extends BaseAction
     public void setChoiceNo(String choiceNo)
     {
         this.choiceNo = choiceNo;
+    }
+
+    public String getBusNo()
+    {
+        return busNo;
+    }
+
+    public void setBusNo(String busNo)
+    {
+        this.busNo = busNo;
     }
 }

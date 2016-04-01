@@ -18,6 +18,17 @@ body {
     background-color: #fff;
 }
 
+.result-header {
+  margin: 45px 0 10px;
+}
+
+.result-hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;

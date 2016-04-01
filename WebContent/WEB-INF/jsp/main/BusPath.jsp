@@ -4,7 +4,7 @@
 	<s:param name="title">Bus Path</s:param>
 </s:include>
 
-<body>
+<body onload="jumpTo('<s:property value="busNo"/>')">
 
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" style="margin-bottom: 0">
@@ -28,7 +28,7 @@
 	                            <ul class="nav nav-second-level">
 									<s:iterator value="#choice.buses" var="bus">
 		                                <li>
-		                                    <a href="BusPath.action<s:property value="#param"/>"><i class="fa fa-bus fa-fw"></i> <s:property value="#bus.busNo"/> <span class="badge"><small><s:property value="#bus.busPrice"/></small></span></a>
+		                                    <a href="BusPath.action<s:property value="%{#param+'&busNo='+#bus.busNo.replaceAll(' ','')}"/>"><i class="fa fa-bus fa-fw"></i> <s:property value="#bus.busNo"/> <span class="badge"><small><s:property value="#bus.busPrice"/></small></span></a>
 		                                </li>
 									</s:iterator>
 	                            </ul>
@@ -43,11 +43,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-	                    <h1 class="page-header"><s:if test="%{busChoices.size==0}">Result not Found</s:if><s:else>Suggestion Result</s:else></h1>
+	                    <h1 class="result-header"><s:if test="%{busChoices.size==0}">Result not Found</s:if><s:else>Suggestion Result</s:else></h1>
 						<s:if test="%{busChoices.size>0}">
 						<s:set name="start" value=""/>
 						<s:set name="end" value=""/>
 						<s:set name="dist" value="0"/>
+						<s:set name="prevKey" value=""/>
 						<s:iterator value="%{busChoices[choiceNo-1].busPaths}" status="rowStatus" var="path">
 							<s:if test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#path.p1NameEn) && !@chai_4d.mbus.map.util.StringUtil@isEmpty(#path.p2NameEn)}">
 								<s:set name="start" value="#path.p1NameEn"/>
@@ -66,6 +67,11 @@
 								<s:set name="dist" value="%{#dist+#path.distance}"/>
 							</s:else>
 							<s:if test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#start) && !@chai_4d.mbus.map.util.StringUtil@isEmpty(#end)}">
+								<s:if test="%{#prevKey!=#path.busNoEn}">
+									<s:set name="prevKey" value="#path.busNoEn"/>
+									<a id="<s:property value="#path.busNoEn.replaceAll(' ','')"/>"></a>
+									<div class="col-sm-12"><hr class="result-hr"></div>
+								</s:if>
 								<div class="col-sm-3">
 									<i class="fa fa-bus fa-fw"></i> <s:property value="#path.busNoEn"/> <span class="badge"><small><s:property value="#path.busPrice"/></small></span>
 								</div>
@@ -90,5 +96,14 @@
     </div>
 
 	<s:include value="../inc/incJS.jsp"/>
+    <script type="text/javascript">
+	    function jumpTo(h) {
+	    	var obj = document.getElementById(h);
+	    	if (obj) {
+	    		var top = obj.offsetTop;
+	    		window.scrollTo(0, top-13);
+	    	}
+	    }
+	</script>
 </body>
 </html>
