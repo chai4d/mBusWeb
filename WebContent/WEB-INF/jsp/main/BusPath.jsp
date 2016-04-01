@@ -4,7 +4,7 @@
 	<s:param name="title">Bus Path</s:param>
 </s:include>
 
-<body onload="jumpTo('<s:property value="busNo"/>')">
+<body onload="jumpTo('<s:property value="busId"/>')">
 
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" style="margin-bottom: 0">
@@ -28,7 +28,7 @@
 	                            <ul class="nav nav-second-level">
 									<s:iterator value="#choice.buses" var="bus">
 		                                <li>
-		                                    <a href="BusPath.action<s:property value="%{#param+'&busNo='+#bus.busNo.replaceAll(' ','')}"/>"><i class="fa fa-bus fa-fw"></i> <s:property value="#bus.busNo"/> <span class="badge"><small><s:property value="#bus.busPrice"/></small></span></a>
+		                                    <a href="BusPath.action<s:property value="%{#param+'&busId='+#bus.busId}"/>"><i class="fa fa-bus fa-fw"></i> <s:property value="#bus.busNo"/> <span class="badge"><small><s:property value="#bus.busPrice"/></small></span></a>
 		                                </li>
 									</s:iterator>
 	                            </ul>
@@ -69,7 +69,7 @@
 							<s:if test="%{!@chai_4d.mbus.map.util.StringUtil@isEmpty(#start) && !@chai_4d.mbus.map.util.StringUtil@isEmpty(#end)}">
 								<s:if test="%{#prevKey!=#path.busNoEn}">
 									<s:set name="prevKey" value="#path.busNoEn"/>
-									<a id="<s:property value="#path.busNoEn.replaceAll(' ','')"/>"></a>
+									<a id="<s:property value="#path.busId"/>"></a>
 									<div class="col-sm-12"><hr class="result-hr"></div>
 								</s:if>
 								<div class="col-sm-3">
