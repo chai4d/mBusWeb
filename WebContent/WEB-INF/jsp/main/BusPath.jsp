@@ -101,7 +101,7 @@
 	    	var obj = document.getElementById(h);
 	    	if (obj) {
 	    		var top = obj.offsetTop;
-	    		window.scrollTo(0, top-13);
+	    		window.scrollTo(0, top-20);
 	    	}
 	    }
 	</script>
