@@ -30,5 +30,6 @@
     </package>
 
     <include file="main.xml"/>
+    <include file="json.xml"/>
 
 </struts>
