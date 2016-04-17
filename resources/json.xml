@@ -7,7 +7,9 @@
     <package name="json" namespace="/json" extends="json-default">
 
         <action name="Home" class="chai_4d.mbus.json.action.HomeJson">
-            <result type="json" />
+            <result type="json">
+            	<param name="encoding">UTF-8</param>
+            </result>
         </action>
 
     </package>
