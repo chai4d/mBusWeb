@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import chai_4d.mbus.map.model.PointName;
+import chai_4d.mbus.map.util.StringUtil;
 import chai_4d.mbus.web.service.HomeService;
 
 public class HomeJson extends BaseJsonAction
@@ -20,7 +21,7 @@ public class HomeJson extends BaseJsonAction
     {
         log.debug("In execute method");
 
-        pointNames = HomeService.getPointNames("en", query);
+        pointNames = HomeService.getPointNames("en", StringUtil.toStringUTF8(query));
 
         return SUCCESS;
     }

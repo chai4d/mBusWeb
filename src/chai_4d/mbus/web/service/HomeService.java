@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 import chai_4d.mbus.map.bean.MapDbBean;
 import chai_4d.mbus.map.model.PointName;
+import chai_4d.mbus.map.util.StringUtil;
 
 public class HomeService
 {
@@ -14,15 +15,18 @@ public class HomeService
 
     public static List<PointName> getPointNames(String lang)
     {
-        log.debug("Load Point Name (" + lang + ")");
+        String aLang = StringUtil.toString(lang);
+        log.debug("Load Point Name (" + aLang + ")");
 
-        return MapDbBean.loadPointName(lang);
+        return MapDbBean.loadPointName(aLang);
     }
 
     public static List<PointName> getPointNames(String lang, String query)
     {
-        log.debug("Load Point Name (" + lang + ", " + query + ")");
+        String aLang = StringUtil.toString(lang);
+        String aQuery = StringUtil.toString(query);
+        log.debug("Load Point Name (" + aLang + ", " + aQuery + ")");
 
-        return MapDbBean.loadPointName(lang, query);
+        return MapDbBean.loadPointName(aLang, aQuery);
     }
 }
