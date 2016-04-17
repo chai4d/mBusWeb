@@ -64,16 +64,6 @@ public abstract class BaseAction extends ActionSupport implements ServletRequest
     public void setServletRequest(HttpServletRequest httpRequest)
     {
         this.httpRequest = httpRequest;
-        if (this.httpRequest != null)
-        {
-            try
-            {
-                this.httpRequest.setCharacterEncoding("UTF-8");
-            }
-            catch (Exception e)
-            {
-            }
-        }
     }
 
     public void setSession(Map<String, Object> sessionMap)
