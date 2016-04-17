@@ -18,4 +18,11 @@ public class HomeService
 
         return MapDbBean.loadPointName(lang);
     }
+
+    public static List<PointName> getPointNames(String lang, String query)
+    {
+        log.debug("Load Point Name (" + lang + ", " + query + ")");
+
+        return MapDbBean.loadPointName(lang, query);
+    }
 }

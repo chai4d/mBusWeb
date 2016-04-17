@@ -6,20 +6,28 @@
 	<Properties>
 		<Property name="win-path">${sys:user.home}</Property>
 		<Property name="unix-path">/var/www/vhosts/m-bus.in.th/httpdocs</Property>
+
 		<Property name="log-path">${win-path}/logs</Property>
 		<Property name="archive-path">${log-path}/archive</Property>
-		<Property name="pattern">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+7} [%t][%.5X{sessionId}][%X{clientIpAddress}] %c{1} - %msg%n</Property>
+
+		<Property name="pattern-web">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+7} [%.5X{sessionId}][%X{clientIpAddress}] %c{1} - %msg%n</Property>
+		<Property name="pattern-app">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+7} [%.5X{sessionId}][%X{clientIpAddress}][%X{deviceInfo}] %c{1} - %msg%n</Property>
 	</Properties>
     <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
+        <Console name="console-web" target="SYSTEM_OUT">
 			<PatternLayout>
-				<Pattern>${pattern}</Pattern>
+				<Pattern>${pattern-web}</Pattern>
 			</PatternLayout>
         </Console>
-		<RollingFile name="file-log" fileName="${log-path}/mBusWeb.log"
+        <Console name="console-app" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>${pattern-app}</Pattern>
+			</PatternLayout>
+        </Console>
+		<RollingFile name="file-log-web" fileName="${log-path}/mBusWeb.log"
 					 filePattern="${archive-path}/mBusWeb-%d{yyyy-MM-dd}{GMT+7}.log">
 			<PatternLayout>
-				<Pattern>${pattern}</Pattern>
+				<Pattern>${pattern-web}</Pattern>
 			</PatternLayout>
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
@@ -31,18 +39,37 @@
 				</Delete>
 			</DefaultRolloverStrategy>
 		</RollingFile>
+		<RollingFile name="file-log-app" fileName="${log-path}/mBusApp.log"
+					 filePattern="${archive-path}/mBusApp-%d{yyyy-MM-dd}{GMT+7}.log">
+			<PatternLayout>
+				<Pattern>${pattern-app}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${archive-path}" maxDepth="2">
+					<IfFileName glob="*/mBusApp-*.log" />
+					<IfLastModified age="90d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
     </Appenders>
     <Loggers>
         <Logger name="chai_4d.mbus.map" level="error" additivity="false">
-            <AppenderRef ref="console"/>
-            <AppenderRef ref="file-log"/>
+            <AppenderRef ref="console-web"/>
+            <AppenderRef ref="file-log-web"/>
         </Logger>
         <Logger name="chai_4d.mbus.web" level="debug" additivity="false">
-            <AppenderRef ref="console"/>
-            <AppenderRef ref="file-log"/>
+            <AppenderRef ref="console-web"/>
+            <AppenderRef ref="file-log-web"/>
+        </Logger>
+        <Logger name="chai_4d.mbus.json" level="debug" additivity="false">
+            <AppenderRef ref="console-app"/>
+            <AppenderRef ref="file-log-app"/>
         </Logger>
         <Root level="warn">
-            <AppenderRef ref="console"/>
+            <AppenderRef ref="console-web"/>
         </Root>
     </Loggers>
 </Configuration>

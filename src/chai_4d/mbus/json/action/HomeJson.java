@@ -1,4 +1,4 @@
-package chai_4d.mbus.web.action;
+package chai_4d.mbus.json.action;
 
 import java.util.List;
 
@@ -8,20 +8,31 @@ import org.apache.logging.log4j.Logger;
 import chai_4d.mbus.map.model.PointName;
 import chai_4d.mbus.web.service.HomeService;
 
-public class JSONAction extends BaseAction
+public class HomeJson extends BaseJsonAction
 {
     private static final long serialVersionUID = -2804891508299782800L;
-    private static final Logger log = LogManager.getLogger(JSONAction.class);
+    private static final Logger log = LogManager.getLogger(HomeJson.class);
 
+    private String query;
     private List<PointName> pointNames;
 
     public String doExecute() throws Exception
     {
         log.debug("In execute method");
 
-        pointNames = HomeService.getPointNames("en");
+        pointNames = HomeService.getPointNames("en", query);
 
         return SUCCESS;
+    }
+
+    public String getQuery()
+    {
+        return query;
+    }
+
+    public void setQuery(String query)
+    {
+        this.query = query;
     }
 
     public List<PointName> getPointNames()

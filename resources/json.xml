@@ -6,7 +6,7 @@
 <struts>
     <package name="json" namespace="/json" extends="json-default">
 
-        <action name="JSON" class="chai_4d.mbus.web.action.JSONAction">
+        <action name="Home" class="chai_4d.mbus.json.action.HomeJson">
             <result type="json" />
         </action>
 
