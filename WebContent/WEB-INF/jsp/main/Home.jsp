@@ -57,7 +57,6 @@
                     <h2 class="section-heading">Free Mobile App on iOS, Android &amp; Windows Phone</h2>
                     <p class="lead">
                     	Project Objective:<br>
-                    	&sdot; No need benefit income for this Mobile App<br>
                     	&sdot; This App should help mass passenger (Thai or Foreigner) who would like to GO but don't know which way they can choose?<br>
                     	&sdot; The App will show list of Bus Path with Total Bus Price, Number of Interchange the Bus, Which Bus No. do you need to wait, Where are you in the map, etc.<br>
                     	&sdot; NO any Advertising, No any Donation, this is pure Free Mobile App
