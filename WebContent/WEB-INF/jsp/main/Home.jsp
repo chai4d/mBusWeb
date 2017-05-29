@@ -143,13 +143,14 @@
 	<s:include value="../inc/incFooter.jsp"/>
 
 	<s:include value="../inc/incJS.jsp"/>
+
     <script type="text/javascript">
         $(function() {
         	var sourceData = [
-					<s:iterator value="pointNames">
-						{id: <s:property value="pId"/>, name: '<s:property value="nameEn"/>'},
-					</s:iterator>
-                ];
+				<s:iterator value="pointNames" status="stat">
+					{id: '<s:property value="pId"/>', name: '<s:property value="nameEn"/>'},
+				</s:iterator>
+        		];
 			$('#source').typeahead({
                 source: sourceData,
                 onSelect: function (item) {
