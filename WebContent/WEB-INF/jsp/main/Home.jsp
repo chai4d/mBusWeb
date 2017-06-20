@@ -100,7 +100,7 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Available to download (soon) on:</h2>
+                    <h2 class="section-heading">Available to download on:</h2>
                     <p class="lead">
                     	&sdot; <a target="_blank" href="http://www.apple.com/itunes/charts/free-apps/">Apple App Store</a><br>
                     	&sdot; <a target="_blank" href="https://play.google.com/store/apps/top">Android Apps on Google Play</a><br>
@@ -120,10 +120,10 @@
     <div class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <h2>Contact Us:</h2>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <ul class="list-inline banner-social-buttons">
                         <li>
                             <a target="_blank" href="mailto:chai_4d@hotmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email Me</span></a>
@@ -133,6 +133,9 @@
                         </li>
                         <li>
                             <a target="_blank" href="http://chai4d.blogspot.com/" class="btn btn-default btn-lg"><i class="fa fa-rss fa-fw"></i> <span class="network-name">Blogger</span></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="Game.action" class="btn btn-default btn-lg"><i class="fa fa-gamepad fa-fw"></i> <span class="network-name">Gamer</span></a>
                         </li>
                     </ul>
                 </div>

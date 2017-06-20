@@ -14,5 +14,9 @@
             <result>/WEB-INF/jsp/main/BusPath.jsp</result>
         </action>
 
+        <action name="Game" class="chai_4d.mbus.web.action.GameAction">
+            <result>/WEB-INF/jsp/main/Game.jsp</result>
+        </action>
+
     </package>
 </struts>
