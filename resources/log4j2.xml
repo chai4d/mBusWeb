@@ -7,7 +7,7 @@
 		<Property name="win-path">${sys:user.home}</Property>
 		<Property name="unix-path">/var/www/vhosts/m-bus.in.th/httpdocs</Property>
 
-		<Property name="log-path">${win-path}/logs</Property>
+		<Property name="log-path">${unix-path}/logs</Property>
 		<Property name="archive-path">${log-path}/archive</Property>
 
 		<Property name="pattern-web">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+7} [%.5X{sessionId}][%X{clientIpAddress}] %c{1} - %msg%n</Property>
